@@ -10,4 +10,9 @@
       <class name="Amazon_eg.selenium.Amazon_eg.Tests.CartItemsVerification"/>
     </classes>
   </test>
+  <test name="Account Access Tests">
+    <classes>
+      <class name="Amazon_eg.selenium.Amazon_eg.Tests.AccountAccessVerification"/>
+    </classes>
+  </test>
 </suite>
