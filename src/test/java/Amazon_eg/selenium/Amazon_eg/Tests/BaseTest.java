@@ -60,7 +60,7 @@ public abstract class BaseTest {
                 (JavascriptExecutor) driver;
 
         // Create screenshots folder if not exists
-        File screenshotFolder = new File("screenshots");
+        File screenshotFolder = new File("Report/screenshots");
 
         if (!screenshotFolder.exists()) {
 

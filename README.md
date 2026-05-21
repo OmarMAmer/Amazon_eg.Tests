@@ -16,7 +16,12 @@ src/test/java/Amazon_eg/selenium/Amazon_eg/Tests/
   AmazonLoginTest.java
   CartItemsVerification.java
   AccountAccessVerification.java
+src/test/java/utils/
+  ExtentManager.java
+  TestListener.java
 src/test/resources/testng.xml
+Report/              (failure screenshots + ExtentReport.html)
+test-output/         (TestNG index.html, emailable-report.html)
 ```
 
 ## Run tests
@@ -30,6 +35,16 @@ mvn test
 This runs the full suite defined in `testng.xml` (login, cart, and account-access tests).
 
 In Eclipse: right-click `testng.xml` or an individual test class → **Run As** → **TestNG Test**.
+
+## Reports and screenshots
+
+| Output | Location |
+|--------|----------|
+| Failure screenshots | `Report/{testMethod}_Part_{n}.png` |
+| Extent HTML report | `Report/ExtentReport.html` |
+| TestNG HTML report | `test-output/index.html` |
+
+Failed tests embed screenshot links in the TestNG report and attach images in the Extent report.
 
 ## Test scenarios
 

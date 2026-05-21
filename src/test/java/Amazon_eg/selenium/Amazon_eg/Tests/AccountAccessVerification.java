@@ -6,6 +6,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.annotations.Listeners;
+import utils.TestListener;
+
+@Listeners(TestListener.class)
 
 public class AccountAccessVerification extends BaseTest {
   
