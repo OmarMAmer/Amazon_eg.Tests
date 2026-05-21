@@ -1,17 +1,20 @@
 # Amazon_eg.Tests
 
-Selenium + TestNG automation for Amazon Egypt login flow (flat test-only layout).
+Selenium + TestNG automation for Amazon Egypt (login and cart flows; flat test-only layout).
 
 ## Prerequisites
 
 - Java 21
 - Maven 3.8+
-- Google Chrome
+- Google Chrome (ChromeDriver is resolved automatically via WebDriverManager)
 
 ## Project structure
 
 ```
-src/test/java/Amazon_eg/selenium/Amazon_eg/Tests/AmazonLoginTest.java
+src/test/java/Amazon_eg/selenium/Amazon_eg/Tests/
+  BaseTest.java
+  AmazonLoginTest.java
+  CartItemsVerification.java
 src/test/resources/testng.xml
 ```
 
@@ -23,8 +26,16 @@ From the project root:
 mvn test
 ```
 
-In Eclipse: right-click `AmazonLoginTest.java` or `testng.xml` → **Run As** → **TestNG Test**.
+This runs the full suite defined in `testng.xml` (login and cart tests).
 
-## Scenario
+In Eclipse: right-click `testng.xml` or an individual test class → **Run As** → **TestNG Test**.
 
-`AmazonLoginTest` opens [amazon.eg](https://www.amazon.eg), signs in with an unregistered email (`notregistered@test.com`), and asserts the “Looks like you're new to Amazon” message appears.
+## Test scenarios
+
+### `AmazonLoginTest`
+
+Opens [amazon.eg](https://www.amazon.eg), signs in with an unregistered email (`notregistered@test.com`), and asserts the “Looks like you're new to Amazon” message appears.
+
+### `CartItemsVerification`
+
+Opens [amazon.eg](https://www.amazon.eg), navigates to Today's Deals, adds a product to the cart with quantity 2, and verifies the cart shows the correct product name, price, quantity, and subtotal.

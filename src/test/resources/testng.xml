@@ -1,8 +1,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Amazon Login Suite" verbose="1">
+<suite name="Amazon Egypt Suite" verbose="1">
   <test name="Login Tests">
     <classes>
       <class name="Amazon_eg.selenium.Amazon_eg.Tests.AmazonLoginTest"/>
+    </classes>
+  </test>
+  <test name="Cart Tests">
+    <classes>
+      <class name="Amazon_eg.selenium.Amazon_eg.Tests.CartItemsVerification"/>
     </classes>
   </test>
 </suite>

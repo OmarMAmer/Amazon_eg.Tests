@@ -1,36 +1,16 @@
 package Amazon_eg.selenium.Amazon_eg.Tests;
 
-import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class AmazonLoginTest {
-	ChromeDriver driver;
-	WebDriverWait wait;
-	
-	@BeforeTest
-	public void openURL()
-	{
-		driver = new ChromeDriver();
-        // Explicit wait
-        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-        
-		driver.manage().window().maximize();
-		driver.navigate().to("https://www.amazon.eg");
-	
-	}
-	
+public class AmazonLoginTest extends BaseTest {
+
     @Test
     public void loginWithUnregisteredEmail() {
-    	
+
         // Wait until Sign In button is clickable
         WebElement signInButton = wait.until(ExpectedConditions.
         		elementToBeClickable(By.id("nav-link-accountList")));
@@ -57,11 +37,5 @@ public class AmazonLoginTest {
 
         Assert.assertEquals(actualMessage,
                 "Looks like you're new to Amazon");
-    }
-    
-    @AfterTest
-    public void closeBrowser() {
-
-        driver.quit();
     }
 }
