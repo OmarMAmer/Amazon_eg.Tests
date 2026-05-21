@@ -64,8 +64,16 @@ public class CartItemsVerification extends BaseTest {
 
         select.selectByVisibleText("2");
         
-        Thread.sleep(1000); 
-        
+        // Close dropdown menu by clicking outside on safe area
+        WebElement productTitleElement = wait.until(
+                ExpectedConditions.elementToBeClickable(
+                        By.id("productTitle")));
+
+        productTitleElement.click();
+
+        // Small wait for UI update
+        Thread.sleep(1000);
+                
         // Add to cart
         WebElement addToCartButton = wait.until(
         		ExpectedConditions.elementToBeClickable(
